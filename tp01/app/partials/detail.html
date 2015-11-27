@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Play with Controller.</h3>
+            </div>
+            <div class="panel-body main-panel">
+                <my-project-detail id-project="paramId"></my-project-detail>
+                <div class="row">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+                             aria-valuemin="0" aria-valuemax="100" ng-style="{width: avancement > 100 ? '100%' : avancement + '%'}">
+                            {{avancement | number}}% Complete
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="form-inline" name="myForm" ng-submit="doGift()">
+                        <div class="form-group col-xs-8">
+                            <label for="goal" class="sr-only">Dons pour le projet en €</label>
+                            <div class="input-group">
+                                <input id="goal" name="goal" class="form-control" ng-model="projectGift" type="number" placeholder="Montant du don" required />
+                                <div class="input-group-addon"><i class="fa fa-eur"></i></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary col-xs-4" ng-model="projectDetail.button">Faire un don</button>
+                    </form>
+                </div>
+                <div class="row">
+                    <br>
+                    <button type="button" ng-click="doDelete()" class="btn btn-danger col-xs-8 col-xs-offset-2" ng-model="projectDetail.button"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

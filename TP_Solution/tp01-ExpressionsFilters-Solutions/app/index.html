@@ -1,0 +1,50 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+  <head>
+    <meta charset="utf-8">
+    <title>NG-CRW</title>
+    <meta name="description" content="">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Custom Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+	<!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-custom" style="" ng-app="">
+
+    <div class="container main">
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Play with expressions.</h3>
+                  </div>
+                  <div class="panel-body main-panel">
+                      
+                      <!-- LET'S START HERE -->
+                      <div>Calcul 1+1: {{1+1}}</div>
+                      <div>Concatenation Hello and world: {{'Hello' + 'World'}}</div>
+                      <div>Undefined : {{user.name}}</div>
+
+                      <br />
+    
+                      <div>Upper case : {{ "Chaine de caracteres" | uppercase}}</div>
+                      <div>Calcul avec filtre : {{1+1 | number:2}}</div>
+                      <div>Date 2013-10-29 avec filtre date 'dd/MM/yyyy' : {{'2013-10-29' | date:'dd/MM/yyyy'}}</div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  	<!-- LIB -->
+  	<script src="lib/angular.min.js"></script>
+  </body>
+</html>
