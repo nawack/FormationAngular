@@ -28,9 +28,11 @@ var myApp = angular.module('myApp', ['myController', 'ngRoute', 'myLogin']).conf
         });
 }]);
 
-myApp.run(function ($rooscope, $location, Auth) {
+myApp.run(function ($rootScope, $location, authServicesFactory) {
     $rootScope.$on('$routeChangeStart', function (event, next) {
-        if (!Auth.userInfo && !next.isLogin) {
+        userToken = new authServicesFactory();
+        userToken.get();
+        if (!userToken.isLogged && !next.isLogin) {
             $rootScope.savedLocation = $location.url();
             $location.path('/login');
         }

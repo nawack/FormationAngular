@@ -42,3 +42,14 @@ myServices.factory('myDataBaseFactory', ['$resource', function($resource) {
    return $resource('/api/projects/:id', {id:'@_id'},
    { 'update': {method: 'PUT'} });
 }]);
+
+
+myServices.factory('authServicesFactory', [function() {
+    var userToken = {
+        isLogged: false,
+        userName: '',
+        userRole: '',
+        userProvider:''
+    }
+    return userToken;
+}]);
