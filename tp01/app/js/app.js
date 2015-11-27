@@ -2,24 +2,40 @@
  * Created by Training on 24/11/2015.
  */
 
-var myApp = angular.module('myApp', ['myController', 'ngRoute']).config(['$routeProvider', function ($routeProvider) {
+var myApp = angular.module('myApp', ['myController', 'ngRoute', 'myLogin']).config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when ('/project', {
-        templateUrl: 'partials/list.html',
-        controller: 'projectCtrl'
+            templateUrl: 'partials/list.html',
+            controller: 'projectCtrl',
+            isLogin: true
         })
         .when ('/newproject', {
-        templateUrl: 'partials/form.html',
-        controller: 'projectCtrl2'
+            templateUrl: 'partials/form.html',
+            controller: 'projectCtrl2',
+            isLogin: true
         })
         .when ('/detail/:id', {
-        templateUrl: 'partials/detail.html',
-        controller: 'projectCtrlDetail'
-    })
+            templateUrl: 'partials/detail.html',
+            controller: 'projectCtrlDetail',
+            isLogin: true
+        })
+        .when ('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'myLoginController'
+        })
         .otherwise({
-            redirectTo: '/project'
+            redirectTo: '/login'
         });
 }]);
+
+myApp.run(function ($rooscope, $location, Auth) {
+    $rootScope.$on('$routeChangeStart', function (event, next) {
+        if (!Auth.userInfo && !next.isLogin) {
+            $rootScope.savedLocation = $location.url();
+            $location.path('/login');
+        }
+    });
+})
 
 myApp.filter('capitalize', function() {
     return function(input, all) {
@@ -27,4 +43,5 @@ myApp.filter('capitalize', function() {
         return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
     }
 });
+
 

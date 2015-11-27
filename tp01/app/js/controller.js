@@ -3,7 +3,7 @@
  */
 var myController = angular.module('myController', ['myServices', 'myDirective']);
 
-myController.controller("projectCtrl", function($scope, /*myProjectServices,*/ myDataBaseFactory) {
+myController.controller("projectCtrl", function($scope, /*myProjectServices,*/ myDataBaseFactory, $rootScope, $location) {
     //$scope.myObject = myProjectServices.getProjects();
     $scope.myObject =  myDataBaseFactory.query();
     $scope.display = function (projectName) {alert(projectName)};
