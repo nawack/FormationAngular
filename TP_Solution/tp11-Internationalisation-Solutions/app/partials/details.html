@@ -1,0 +1,37 @@
+<div class="container main">
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Project details</h3>
+                  </div>
+                  <div class="panel-body main-panel">
+                    <h2 class="project-name">{{project.name}}</h2>
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/640x300" alt="">
+                    </div>
+
+                    <h2 class="project-description-title">Description</h2>
+                    <div class="project-description">{{project.description}}</div>
+
+                    <h2 class="project-progress-title">Progress</h2>
+                    <b>Goal</b> : {{project.goal}}
+                    <div class="progress progress-striped project-progress">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{project.gifts}}" aria-valuemin="0" aria-valuemax="{{project.goal}}" style="width: {{project.gifts/project.goal*100}}%">
+                        <span class="sr-only">{{project.gifts/project.goal*100}}% Complete</span>
+                      </div>
+                    </div>
+                    <form class="form-inline" role="give">
+                      <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Gift amount" ng-model="giftAmount">
+                      </div>
+                      <button type="button" class="btn btn-success" ng-click="makeAGift()">
+                          <span class="glyphicon glyphicon-thumbs-up"></span> GIVE
+                      </button>
+                    </form>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>

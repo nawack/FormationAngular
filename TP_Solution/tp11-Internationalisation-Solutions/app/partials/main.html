@@ -1,0 +1,27 @@
+<div class="container main">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 main-intro">
+            <h1 class="brand-heading">{{'MAINTITLE' | translate }}</h1>
+            <p class="intro-text">{{'MAINSUBTITLE' | translate }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col-md-9">
+                <h3>{{'MAINLATESTPROJECTS' | translate }}</h3>
+            </div>
+        </div>
+        <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-sm-3" ng-repeat="project in projects | orderBy:'date':true | limitTo:4  ">
+                            <card info="project" ng-hide="toggleMode"  ng-animate="{show: 'animate-enter', hide: 'animate-leave'}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

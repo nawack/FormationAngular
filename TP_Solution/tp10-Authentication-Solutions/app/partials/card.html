@@ -1,0 +1,19 @@
+<div class="thumbnail">
+    <img src="http://placehold.it/320x150" alt="">
+    <div class="caption card-caption">
+        <h4 class="pull-right card-goal">{{project.goal | currency}}</h4>
+        <h4 class="card-name"><a href="/#/project/{{project._id}}">{{project.name}}</a>
+        </h4>
+        <p>{{project.category}}</p>
+        <p class="card-date">Since {{project.date | date:'mediumDate'}}</p>
+        <p class="card-description">{{project.description}}</p>
+    </div>
+    <div class="progress progress-striped card-progress">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{project.gifts}}" aria-valuemin="0" aria-valuemax="{{project.goal}}" style="width: {{project.gifts/project.goal*100}}%">
+        <span class="sr-only">{{project.gifts/project.goal*100}}% Complete</span>
+      </div>
+    </div>
+    <div class="card-gift">
+        <a class="btn btn-primary" href="/#/project/{{project._id}}">Make a gift</a>
+    </div>
+</div>

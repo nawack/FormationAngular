@@ -1,0 +1,31 @@
+<div class="container main">
+    <div class="row">
+        <div class="col-md-3 discover-categories">
+            <p class="lead">Projects</p>
+            <div class="list-group">
+                <a ng-click="setSelectedProgress('all')" ng-class="{active: selectedProgress=='all'}" class="list-group-item">All</a>
+                <a ng-click="setSelectedProgress('finished')" ng-class="{active: selectedProgress=='finished'}" class="list-group-item">Finished</a>
+                <a ng-click="setSelectedProgress('not-finished')" ng-class="{active: selectedProgress=='not-finished'}" class="list-group-item">To finish</a>
+            </div>
+        </div>
+        <div class="col-md-3 discover-categories">
+            <p class="lead">Categories</p>
+            <div class="list-group">
+                <a ng-click="setSelectedCategory('')" ng-class="{active: selectedCategory==''}" class="list-group-item">All</a>
+                <a ng-click="setSelectedCategory(category)" ng-class="{active: selectedCategory==category}" class="list-group-item" ng-repeat="category in categories">{{category}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-lg-3 col-md-3 discover-newproject">
+            <h4><a href="#">Want to launch your own project?</a>
+            </h4>
+            <p>You can launch your own project starting by giving us few informations.</p>
+            <a class="btn btn-info" href="/#/newproject">New project</a>
+        </div>
+
+        <div class="col-sm-3 col-lg-3 col-md-3" ng-repeat="project in filtered = (projects | progressFilter:selectedProgress | categoryFilter:selectedCategory | orderBy:'date':true)">
+            <card info="project"/>
+        </div>
+    </div>
+</div>
