@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ed771fe-0549-489d-967c-abc0c3d7742a" name="Default" comment="mise à jour gestion login et ajout gestion menu">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/tp01_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/tp01_node_modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tp01.iml" afterPath="$PROJECT_DIR$/.idea/tp01.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="1ed771fe-0549-489d-967c-abc0c3d7742a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controller.js" afterPath="$PROJECT_DIR$/app/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/login.js" afterPath="$PROJECT_DIR$/app/js/login.js" />
     </list>
     <ignored path="tp01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -814,12 +805,19 @@
       <created>1448362371180</created>
       <option name="number" value="Default" />
       <updated>1448362371180</updated>
-      <workItem from="1448707847465" duration="6597000" />
+      <workItem from="1448707847465" duration="6676000" />
     </task>
+    <task id="LOCAL-00001" summary="mise à jour gestion login et ajout gestion menu">
+      <created>1448717876674</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1448717876674</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6597000" />
+    <option name="totallyTimeSpent" value="6676000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
