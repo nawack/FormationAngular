@@ -30,14 +30,12 @@ var myApp = angular.module('myApp', ['myController', 'ngRoute', 'myLogin']).conf
 
 myApp.run(function ($rootScope, $location, authServicesFactory) {
     $rootScope.$on('$routeChangeStart', function (event, next) {
-        userToken = new authServicesFactory();
-        userToken.get();
-        if (!userToken.isLogged && !next.isLogin) {
+        if (!authServicesFactory.isLogged && next.isLogin) {
             $rootScope.savedLocation = $location.url();
             $location.path('/login');
         }
     });
-})
+});
 
 myApp.filter('capitalize', function() {
     return function(input, all) {
@@ -45,5 +43,3 @@ myApp.filter('capitalize', function() {
         return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
     }
 });
-
-

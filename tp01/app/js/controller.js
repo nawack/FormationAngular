@@ -26,7 +26,7 @@ myController.controller("projectCtrl2", function($scope, $location, myProjectSer
     };
 });
 
-myController.controller('projectCtrlDetail', function($scope, $location, $routeParams, myProjectServices, myDataBaseFactory){
+myController.controller('projectCtrlDetail', function($scope, $location, $routeParams, myProjectServices, myDataBaseFactory) {
     //$scope.selectedProject = myProjectServices.getProjectById($routeParams.id);
 
     $scope.paramId = $routeParams.id;
@@ -46,3 +46,12 @@ myController.controller('projectCtrlDetail', function($scope, $location, $routeP
     }
 
 });
+
+myController.controller('menuCtrl', function($scope, authServicesFactory) {
+    $scope.showMenu =  authServicesFactory.isLogged;
+
+    $scope.$on('evtLogIn', function( event, authServicesFactory ) {
+        $scope.showMenu =  authServicesFactory.isLogged;
+    });
+});
+

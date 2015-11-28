@@ -4,21 +4,18 @@
 var myLogin = angular.module('myLogin', ['ngResource', 'myServices']);
 
 myLogin.controller("myLoginController", function($scope, $location, myloginFactory, authServicesFactory) {
-
-
     $scope.logMe = function () {
         // ATTENTION traitement asynchrone, donc a faire a la suite donc a inclure en paramêtre dans une fonction
-        var newUserToken = new authServicesFactory();
-
         var user = myloginFactory.tryConnect({email:$scope.logInfo.login}, {password:$scope.logInfo.password}
             , function () {
                 if (user.name) {
-                    newUserToken.userName = user.name;
-                    newUserToken.userRole = user.role;
-                    newUserToken.userProvider = user.provider;
-                    newUserToken.isLogged = true;
-                    newUserToken.$save();
-                    console.log('log OK : ', userToken);
+                    authServicesFactory.userName = user.name;
+                    authServicesFactory.userRole = user.role;
+                    authServicesFactory.userProvider = user.provider;
+                    authServicesFactory.isLogged = true;
+                    console.log('auth ok : ', authServicesFactory);
+                    $scope.$emit('evtLogIn', authServicesFactory);
+
                     $location.path('/project');
                 }
             }, function () {
